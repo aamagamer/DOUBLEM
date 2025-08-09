@@ -3,173 +3,134 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Your Company – Facilities Management in DFW</title>
+<title>Facilities Maintenance - DFW Area</title>
 <style>
-  /* Reset */
+  /* Reset básico */
   * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
   }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #fafafa;
+  body, html {
+    margin: 0; padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f9fbff;
     color: #333;
-    line-height: 1.6;
+    overflow-x: hidden;
   }
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px 15px;
-  }
+
   header {
-    background: #fff;
+    background: #1e3a8a;
+    color: white;
     padding: 20px 0;
-    border-bottom: 3px solid #e67e22;
-    margin-bottom: 40px;
-  }
-  header h1 {
-    color: #e67e22;
+    text-align: center;
     font-weight: 700;
     font-size: 1.8rem;
-  }
-  nav {
-    margin-top: 10px;
-  }
-  nav a {
-    color: #555;
-    margin-right: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  nav a:hover {
-    color: #e67e22;
+    letter-spacing: 1px;
   }
 
-  /* Hero */
-  #hero {
+  main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  /* Sección: Improving Profits */
+  #improving-profits {
+    background: white;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
     text-align: center;
-    padding: 100px 15px 80px;
-    background: url('https://via.placeholder.com/1600x800?text=Hero+Image') center/cover no-repeat;
-    border-radius: 8px;
-    box-shadow: 0 0 30px rgb(230 126 34 / 0.4);
-    color: #e67e22;
-    text-shadow: 1px 1px 3px #fff;
+    color: #1e3a8a;
   }
-  #hero h2 {
-    font-size: 2.8rem;
+  #improving-profits h2 {
     font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
   }
-  #hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-    color: #444;
-    text-shadow: none;
-  }
-  .btn-primary {
-    background-color: #e67e22;
-    border: none;
-    color: white;
-    padding: 14px 40px;
+  #improving-profits p {
     font-size: 1.1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .btn-primary:hover {
-    background-color: #cf6a16;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
   }
 
-  /* Offerings */
-  #offerings {
+  /* Sección: Partner With Us */
+  #partner-with-us {
+    text-align: center;
     margin-bottom: 50px;
   }
-  #offerings h2.section-title {
-    color: #e67e22;
-    font-size: 2.4rem;
+  #partner-with-us h3 {
     font-weight: 700;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  .services-grid {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .service-card {
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    width: 320px;
-    height: 400px;
-    position: relative;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .service-card img {
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-
-  /* Hover expand */
-  .hover-expand .overlay {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: rgba(230, 126, 34, 0.9);
-    color: #fff;
-    padding: 20px 25px;
-    overflow-y: auto;
-    opacity: 0;
-    transition: opacity 0.4s ease, top 0.4s ease;
-  }
-  .hover-expand:hover img {
-    transform: scale(1.1);
-  }
-  .hover-expand:hover .overlay {
-    opacity: 1;
-    top: 0;
-  }
-  .overlay h3 {
+    font-size: 1.8rem;
+    color: #1e3a8a;
     margin-bottom: 12px;
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-shadow: 0 0 5px rgb(0 0 0 / 0.4);
   }
-  .overlay p {
+  #partner-with-us button {
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
     font-size: 1rem;
-    margin-bottom: 10px;
-    color: #fff;
+    transition: background-color 0.3s ease;
   }
-  .overlay ul {
-    list-style: disc;
-    padding-left: 20px;
-    font-size: 0.95rem;
-    max-height: 170px;
+  #partner-with-us button:hover {
+    background-color: #16306b;
   }
 
-  /* Tabs for services */
-  #carousel {
-    background: #fff;
+  /* Secciones Exterior e Interior */
+  .work-section {
+    background: white;
+    margin-bottom: 40px;
     border-radius: 12px;
-    padding: 30px 25px;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-    max-width: 900px;
-    margin: 0 auto 60px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
+    padding: 25px 30px;
   }
-  #carousel h2.section-title {
-    color: #e67e22;
+  .work-section h3 {
+    color: #1e3a8a;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .work-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  .placeholder-img {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    background: #ddd;
+    border: 2px dashed #bbb;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 1.2rem;
+    border-radius: 12px;
+  }
+
+  /* Sección Additional Services con menú tabs */
+  #carousel {
+    width: 100%;
+    background: #fff;
+    padding: 30px 0;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    border-radius: 0;
+    box-sizing: border-box;
+  }
+  #carousel .carousel-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+    box-sizing: border-box;
+  }
+  .section-title {
+    color: #1e3a8a;
     margin-bottom: 25px;
     font-weight: 700;
     font-size: 2rem;
@@ -177,44 +138,48 @@
   }
   .tabs {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-around;
+    background: #e6ecf7;
+    padding: 0;
     margin-bottom: 20px;
-    flex-wrap: wrap;
+    border-radius: 8px 8px 0 0;
+    user-select: none;
+    width: 100%;
   }
   .tab {
-    padding: 12px 20px;
+    flex-grow: 1;
+    text-align: center;
+    padding: 15px 0;
     cursor: pointer;
-    border: 2px solid transparent;
-    border-bottom: 2px solid transparent;
+    border-bottom: none; /* quitamos líneas */
     font-weight: 600;
-    color: #666;
+    color: #4a5568;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    user-select: none;
-    border-radius: 8px 8px 0 0;
-    background: #f9f9f9;
+    background: transparent;
+    border-radius: 8px 8px 0 0; /* redondeado para cada tab */
+  }
+  .tab:hover {
+    background-color: #d1d9f0;
+    color: #1e3a8a;
   }
   .tab.active {
-    border-color: #e67e22;
-    color: #e67e22;
-    background: #fff;
-    box-shadow: 0 3px 8px rgb(230 126 34 / 0.3);
+    background-color: #1e3a8a;
+    color: white;
+    border-bottom: none;
+    font-weight: 700;
   }
-  .tab:hover:not(.active) {
-    color: #e67e22;
-  }
-
   .tab-content {
     background: #fff;
-    border-radius: 0 12px 12px 12px;
+    border-radius: 0 0 12px 12px;
     padding: 20px 25px;
     color: #444;
     min-height: 260px;
     box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
   }
   .tab-content h3 {
+    color: #1e3a8a;
     margin-bottom: 15px;
-    color: #e67e22;
   }
   .tab-content p {
     margin-bottom: 12px;
@@ -226,284 +191,156 @@
     font-size: 1rem;
     max-height: 160px;
     overflow-y: auto;
-  }
-  .tab-content ul li {
-    margin-bottom: 5px;
-  }
-
-  /* Contact */
-  #contact {
-    max-width: 600px;
-    margin: 0 auto 40px;
-    text-align: center;
-  }
-  #contact h2.section-title {
-    color: #e67e22;
-    font-size: 2.4rem;
-    margin-bottom: 20px;
-  }
-  #contact p.contact-info {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    color: #555;
-  }
-  form input,
-  form textarea {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-  form input:focus,
-  form textarea:focus {
-    border-color: #e67e22;
-    outline: none;
-  }
-  form textarea {
-    min-height: 120px;
-    resize: vertical;
-  }
-  .btn-primary {
-    background-color: #e67e22;
-    border: none;
-    color: white;
-    padding: 14px 40px;
-    font-size: 1.1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .btn-primary:hover {
-    background-color: #cf6a16;
-  }
-  footer {
-    text-align: center;
-    padding: 20px 15px;
-    background: #fff;
-    border-top: 3px solid #e67e22;
-    color: #666;
-    font-weight: 600;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .services-grid {
-      flex-direction: column;
-      align-items: center;
-    }
-    nav {
-      text-align: center;
-    }
-    nav a {
-      margin: 0 12px 15px;
-      display: inline-block;
-    }
-    .tabs {
-      justify-content: center;
-      gap: 10px;
-    }
-    .tab {
-      padding: 8px 15px;
-      font-size: 0.9rem;
-    }
+    margin: 0;
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <h1>Your Company DFW</h1>
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#offerings">Offerings</a>
-      <a href="#carousel">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<header>Facilities Maintenance - DFW Area</header>
 
-<section id="hero">
-  <div class="container">
-    <h2>Improving Profits Through<br />Exceptional Facilities Management</h2>
-    <p>
-      At Your Company, it’s all about the experience. We focus exclusively on improving maintenance processes and scale a client-specific, best-in-class facilities maintenance & management program that drives efficiency and increases your bottom line.
-    </p>
-    <button class="btn-primary">Partner With Us</button>
-  </div>
-</section>
+<main>
 
-<section id="offerings" class="container">
-  <h2 class="section-title">Offerings</h2>
-  <div class="services-grid">
-    <div class="service-card hover-expand">
-      <img src="https://via.placeholder.com/600x400?text=Exterior+Maintenance" alt="Exterior Maintenance" />
-      <div class="overlay">
-        <h3>Exterior Maintenance</h3>
-        <p>From power washing to landscaping, we can help you maintain a beautiful exterior.</p>
+  <section id="improving-profits" aria-label="Improving Profits">
+    <h2>Improving Profits Through<br>Exceptional Facilities Management</h2>
+    <p>At SMG, it’s all about the experience. We focus exclusively on improving maintenance processes and scale a client-specific, best-in-class facilities maintenance & management program that drives efficiency and increases your bottom line.</p>
+  </section>
+
+  <section id="partner-with-us" aria-label="Partner With Us">
+    <h3>Partner With Us</h3>
+    <button type="button" aria-label="Learn More About Our Offerings">Learn More About Our Offerings</button>
+  </section>
+
+  <section class="work-section" aria-label="Exterior Maintenance">
+    <h3>Exterior Maintenance</h3>
+    <p>From power washing to landscaping, we can help you maintain a beautiful exterior.</p>
+    <div class="placeholder-img" role="img" aria-label="Placeholder for Exterior Maintenance Image">
+      Exterior Maintenance Image Placeholder
+    </div>
+  </section>
+
+  <section class="work-section" aria-label="Interior Maintenance">
+    <h3>Interior Maintenance</h3>
+    <p>Plumbing, electrical, lighting, and more - keep the inside of your buildings looking and functioning their best.</p>
+    <div class="placeholder-img" role="img" aria-label="Placeholder for Interior Maintenance Image">
+      Interior Maintenance Image Placeholder
+    </div>
+  </section>
+
+  <section id="carousel" aria-label="Additional Services">
+    <div class="carousel-inner">
+      <h2 class="section-title">Additional Services</h2>
+      <div class="tabs" role="tablist" aria-label="Additional Services Tabs">
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="tab1" id="tab1-btn">
+          Demand & Reactive Services
+        </button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab2" id="tab2-btn">
+          Preventative Maintenance
+        </button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab3" id="tab3-btn">
+          Project & Program Rollout
+        </button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab4" id="tab4-btn">
+          Emergency Disaster Response
+        </button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab5" id="tab5-btn">
+          Professional Services
+        </button>
+      </div>
+
+      <div class="tab-content" id="tab1" role="tabpanel" aria-labelledby="tab1-btn">
+        <h3>Demand & Reactive Facilities Maintenance Services</h3>
+        <p>These facilities maintenance services cover all labor trades we offer on a demand service response (2-hour emergency, 4-hour emergency, same day, and standard 24-48 hour onsite response).</p>
         <ul>
+          <li>Plumbing</li>
+          <li>Backflow</li>
+          <li>Electrical</li>
+          <li>HVAC</li>
+          <li>Signage</li>
+          <li>Carpentry</li>
           <li>Gates</li>
           <li>Glass</li>
-          <li>Land/Snow Management</li>
-          <li>Masonry</li>
-          <li>Power Washing</li>
-          <li>and More</li>
+          <li>Locks</li>
+          <li>Pest Control</li>
         </ul>
       </div>
-    </div>
-    <div class="service-card hover-expand">
-      <img src="https://via.placeholder.com/600x400?text=Interior+Maintenance" alt="Interior Maintenance" />
-      <div class="overlay">
-        <h3>Interior Maintenance</h3>
-        <p>Plumbing, electrical, lighting, and more - keep the inside of your buildings looking and functioning their best.</p>
+      <div class="tab-content" id="tab2" role="tabpanel" aria-labelledby="tab2-btn" hidden>
+        <h3>Preventative Maintenance</h3>
+        <p>Preventive maintenance involves the systematic inspection of equipment and assets where potential problems have been identified and proactively corrected to prevent equipment failure before it happens while extending the useful life of critical assets.</p>
         <ul>
-          <li>Carpentry</li>
-          <li>Drywall & Painting</li>
-          <li>Electrical / Lighting</li>
-          <li>HVAC / Plumbing</li>
-          <li>and More</li>
+          <li>Keep assets performing well year-round</li>
+          <li>Track and manage critical asset data</li>
+          <li>Better manage repair and maintenance budgets</li>
+          <li>Frequency/scope analysis and definition</li>
+          <li>Reduce overall reactive HVAC spend</li>
+          <li>Customized by asset requirements</li>
+        </ul>
+      </div>
+      <div class="tab-content" id="tab3" role="tabpanel" aria-labelledby="tab3-btn" hidden>
+        <h3>Project & Program Rollout</h3>
+        <p>We help clients achieve project goals and strategic objectives within specific timeframe and budget, improving efficiencies with technology and best practices.</p>
+        <ul>
+          <li>High Traffic Painting</li>
+          <li>Restroom Refreshes</li>
+          <li>Fixture Upgrades</li>
+          <li>Demolition</li>
+          <li>Rebranding</li>
+        </ul>
+      </div>
+      <div class="tab-content" id="tab4" role="tabpanel" aria-labelledby="tab4-btn" hidden>
+        <h3>Emergency Disaster Response</h3>
+        <p>Providing peace of mind during emergencies, available 24/7/365 to handle unforeseen events and minimize damage.</p>
+        <ul>
+          <li>Natural Disasters</li>
+          <li>Civil Unrest</li>
+          <li>Board-Ups</li>
+          <li>Sandbagging</li>
+          <li>Burglary</li>
+        </ul>
+      </div>
+      <div class="tab-content" id="tab5" role="tabpanel" aria-labelledby="tab5-btn" hidden>
+        <h3>Professional Services</h3>
+        <p>Implementing solutions to streamline real estate, design, construction, and maintenance projects, ensuring success on time and budget.</p>
+        <ul>
+          <li>Engineering</li>
+          <li>Architectural</li>
+          <li>Site Surveys</li>
+          <li>Asset Collection</li>
+          <li>Consulting</li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="carousel" class="container">
-  <h2 class="section-title">Additional Services</h2>
-  <div class="tabs" role="tablist" aria-label="Additional Services Tabs">
-    <button class="tab active" role="tab" aria-selected="true" aria-controls="tab1" id="tab1-btn">Demand & Reactive Services</button>
-    <button class="tab" role="tab" aria-selected="false" aria-controls="tab2" id="tab2-btn">Preventative Maintenance</button>
-    <button class="tab" role="tab" aria-selected="false" aria-controls="tab3" id="tab3-btn">Project & Program Rollout</button>
-    <button class="tab" role="tab" aria-selected="false" aria-controls="tab4" id="tab4-btn">Emergency Disaster Response</button>
-    <button class="tab" role="tab" aria-selected="false" aria-controls="tab5" id="tab5-btn">Professional Services</button>
-  </div>
-  <div class="tab-content" id="tab1" role="tabpanel" aria-labelledby="tab1-btn">
-    <h3>Demand & Reactive Facilities Maintenance Services</h3>
-    <p>
-      These facilities maintenance services cover all labor trades we offer on a demand service response (2-hour emergency, 4-hour emergency, same day, and standard 24-48 hour onsite response).
-    </p>
-    <ul>
-      <li>Plumbing</li>
-      <li>Backflow</li>
-      <li>Electrical</li>
-      <li>HVAC</li>
-      <li>Signage</li>
-      <li>Carpentry</li>
-      <li>Gates</li>
-      <li>Glass</li>
-      <li>Locks</li>
-      <li>Pest Control</li>
-    </ul>
-  </div>
-  <div class="tab-content" id="tab2" role="tabpanel" aria-labelledby="tab2-btn" hidden>
-    <h3>Preventative Maintenance</h3>
-    <p>
-      Preventive maintenance involves the systematic inspection of equipment and assets where potential problems have been identified and proactively corrected to prevent equipment failure before it happens while extending the useful life of critical assets.
-    </p>
-    <ul>
-      <li>Keep assets performing well year-round</li>
-      <li>Track and manage critical asset data</li>
-      <li>Better manage repair and maintenance budgets</li>
-      <li>Frequency/scope analysis and definition</li>
-      <li>Reduce overall reactive HVAC spend</li>
-      <li>Customized by asset requirements</li>
-    </ul>
-  </div>
-  <div class="tab-content" id="tab3" role="tabpanel" aria-labelledby="tab3-btn" hidden>
-    <h3>Project & Program Rollout</h3>
-    <p>
-      We help clients achieve project goals and strategic objectives within specific timeframe and budget, improving efficiencies with technology and best practices.
-    </p>
-    <ul>
-      <li>High Traffic Painting</li>
-      <li>Restroom Refreshes</li>
-      <li>Fixture Upgrades</li>
-      <li>Demolition</li>
-      <li>Rebranding</li>
-    </ul>
-  </div>
-  <div class="tab-content" id="tab4" role="tabpanel" aria-labelledby="tab4-btn" hidden>
-    <h3>Emergency Disaster Response</h3>
-    <p>
-      Providing peace of mind during emergencies, available 24/7/365 to handle unforeseen events and minimize damage.
-    </p>
-    <ul>
-      <li>Natural Disasters</li>
-      <li>Civil Unrest</li>
-      <li>Board-Ups</li>
-      <li>Sandbagging</li>
-      <li>Burglary</li>
-    </ul>
-  </div>
-  <div class="tab-content" id="tab5" role="tabpanel" aria-labelledby="tab5-btn" hidden>
-    <h3>Professional Services</h3>
-    <p>
-      Implementing solutions to streamline real estate, design, construction, and maintenance projects, ensuring success on time and budget.
-    </p>
-    <ul>
-      <li>Engineering</li>
-      <li>Architectural</li>
-      <li>Site Surveys</li>
-      <li>Asset Collection</li>
-      <li>Consulting</li>
-    </ul>
-  </div>
-</section>
-
-<section id="contact" class="container">
-  <h2 class="section-title">Let's Work Together</h2>
-  <p class="contact-info">
-    Contact our professional team today by filling out the form or calling us at +1 (XXX) XXX-XXXX, and we’ll respond within 48 hours.
-  </p>
-  <form>
-    <input type="text" placeholder="First Name" required />
-    <input type="text" placeholder="Last Name" required />
-    <input type="email" placeholder="Email" required />
-    <input type="text" placeholder="Subject" />
-    <textarea placeholder="Message" required></textarea>
-    <button class="btn-primary" type="submit">Get in Touch</button>
-  </form>
-</section>
-
-<footer>
-  <div class="container">
-    <p>© 2025 Your Company DFW – All rights reserved</p>
-  </div>
-</footer>
+</main>
 
 <script>
-  // Tabs functionality
-  const tabs = document.querySelectorAll('.tab');
-  const tabContents = document.querySelectorAll('.tab-content');
+  const tabs = document.querySelectorAll('#carousel .tab');
+  const tabContents = document.querySelectorAll('#carousel .tab-content');
 
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      // Remove active classes and hide contents
-      tabs.forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      tabContents.forEach(c => c.hidden = true);
-
-      // Activate clicked tab and show content
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-      const target = tab.getAttribute('aria-controls');
-      document.getElementById(target).hidden = false;
+  function activateTab(index) {
+    tabs.forEach((tab, i) => {
+      if(i === index) {
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        tabContents[i].hidden = false;
+      } else {
+        tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false');
+        tabContents[i].hidden = true;
+      }
     });
-  });
+  }
 
-  // Optional: switch tabs on hover (commented out)
-  /*
-  tabs.forEach((tab) => {
+  // Activate first tab initially
+  activateTab(0);
+
+  // Change tab on mouse enter (hover)
+  tabs.forEach((tab, idx) => {
     tab.addEventListener('mouseenter', () => {
-      tab.click();
+      activateTab(idx);
     });
   });
-  */
 </script>
 
 </body>
