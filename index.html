@@ -12,7 +12,7 @@
   body, html {
     margin: 0; padding: 0;
     font-family: Arial, sans-serif;
-    background: #f9fbff;
+    background: #ffffff;
     color: #333;
     overflow-x: hidden;
   }
@@ -39,7 +39,6 @@
     padding: 40px 30px;
     margin-bottom: 40px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
     text-align: center;
     color: #1e3a8a;
   }
@@ -144,20 +143,20 @@
     margin-bottom: 20px;
     user-select: none;
     width: 100%;
-    border-radius: 0; /* sin redondeados */
+    border-radius: 0;
   }
   .tab {
     flex-grow: 1;
     text-align: center;
     padding: 15px 0;
     cursor: pointer;
-    border: none; /* sin bordes */
+    border: none;
     font-weight: 600;
     color: #4a5568;
     font-size: 1rem;
     transition: all 0.3s ease;
     background: transparent;
-    border-radius: 0; /* sin redondeados */
+    border-radius: 0;
   }
   .tab:hover {
     background-color: #d1d9f0;
@@ -191,6 +190,52 @@
     max-height: 160px;
     overflow-y: auto;
     margin: 0;
+  }
+
+  /* Flex para imagen + texto en pestañas */
+  .tab-flex-container {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .tab-image {
+    flex: 0 0 280px;
+  }
+  .placeholder-img-small {
+    width: 280px;
+    height: 180px;
+    background: #ddd;
+    border: 2px dashed #bbb;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    font-size: 1.1rem;
+    user-select: none;
+  }
+  .tab-text {
+    flex: 1 1 400px;
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    main {
+      margin: 20px 15px;
+      padding: 0 10px;
+    }
+    .tab-flex-container {
+      flex-direction: column;
+    }
+    .tab-image, .tab-text {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+    .placeholder-img-small {
+      width: 100%;
+      height: 160px;
+    }
   }
 </style>
 </head>
@@ -248,66 +293,106 @@
       </div>
 
       <div class="tab-content" id="tab1" role="tabpanel" aria-labelledby="tab1-btn">
-        <h3>Demand & Reactive Facilities Maintenance Services</h3>
-        <p>These facilities maintenance services cover all labor trades we offer on a demand service response (2-hour emergency, 4-hour emergency, same day, and standard 24-48 hour onsite response).</p>
-        <ul>
-          <li>Plumbing</li>
-          <li>Backflow</li>
-          <li>Electrical</li>
-          <li>HVAC</li>
-          <li>Signage</li>
-          <li>Carpentry</li>
-          <li>Gates</li>
-          <li>Glass</li>
-          <li>Locks</li>
-          <li>Pest Control</li>
-        </ul>
+        <div class="tab-flex-container">
+          <div class="tab-image" aria-label="Image Demand & Reactive Services placeholder">
+            <div class="placeholder-img-small">Image Placeholder</div>
+          </div>
+          <div class="tab-text">
+            <h3>Demand & Reactive Facilities Maintenance Services</h3>
+            <p>These facilities maintenance services cover all labor trades we offer on a demand service response (2-hour emergency, 4-hour emergency, same day, and standard 24-48 hour onsite response).</p>
+            <ul>
+              <li>Plumbing</li>
+              <li>Backflow</li>
+              <li>Electrical</li>
+              <li>HVAC</li>
+              <li>Signage</li>
+              <li>Carpentry</li>
+              <li>Gates</li>
+              <li>Glass</li>
+              <li>Locks</li>
+              <li>Pest Control</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
       <div class="tab-content" id="tab2" role="tabpanel" aria-labelledby="tab2-btn" hidden>
-        <h3>Preventative Maintenance</h3>
-        <p>Preventive maintenance involves the systematic inspection of equipment and assets where potential problems have been identified and proactively corrected to prevent equipment failure before it happens while extending the useful life of critical assets.</p>
-        <ul>
-          <li>Keep assets performing well year-round</li>
-          <li>Track and manage critical asset data</li>
-          <li>Better manage repair and maintenance budgets</li>
-          <li>Frequency/scope analysis and definition</li>
-          <li>Reduce overall reactive HVAC spend</li>
-          <li>Customized by asset requirements</li>
-        </ul>
+        <div class="tab-flex-container">
+          <div class="tab-image" aria-label="Image Preventative Maintenance placeholder">
+            <div class="placeholder-img-small">Image Placeholder</div>
+          </div>
+          <div class="tab-text">
+            <h3>Preventative Maintenance</h3>
+            <p>Preventive maintenance involves the systematic inspection of equipment and assets where potential problems have been identified and proactively corrected to prevent equipment failure before it happens while extending the useful life of critical assets.</p>
+            <ul>
+              <li>Keep assets performing well year-round</li>
+              <li>Track and manage critical asset data</li>
+              <li>Better manage repair and maintenance budgets</li>
+              <li>Frequency/scope analysis and definition</li>
+              <li>Reduce overall reactive HVAC spend</li>
+              <li>Customized by asset requirements</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
       <div class="tab-content" id="tab3" role="tabpanel" aria-labelledby="tab3-btn" hidden>
-        <h3>Project & Program Rollout</h3>
-        <p>We help clients achieve project goals and strategic objectives within specific timeframe and budget, improving efficiencies with technology and best practices.</p>
-        <ul>
-          <li>High Traffic Painting</li>
-          <li>Restroom Refreshes</li>
-          <li>Fixture Upgrades</li>
-          <li>Demolition</li>
-          <li>Rebranding</li>
-        </ul>
+        <div class="tab-flex-container">
+          <div class="tab-image" aria-label="Image Project & Program Rollout placeholder">
+            <div class="placeholder-img-small">Image Placeholder</div>
+          </div>
+          <div class="tab-text">
+            <h3>Project & Program Rollout</h3>
+            <p>We help clients achieve project goals and strategic objectives within specific timeframe and budget, improving efficiencies with technology and best practices.</p>
+            <ul>
+              <li>High Traffic Painting</li>
+              <li>Restroom Refreshes</li>
+              <li>Fixture Upgrades</li>
+              <li>Demolition</li>
+              <li>Rebranding</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
       <div class="tab-content" id="tab4" role="tabpanel" aria-labelledby="tab4-btn" hidden>
-        <h3>Emergency Disaster Response</h3>
-        <p>Providing peace of mind during emergencies, available 24/7/365 to handle unforeseen events and minimize damage.</p>
-        <ul>
-          <li>Natural Disasters</li>
-          <li>Civil Unrest</li>
-          <li>Board-Ups</li>
-          <li>Sandbagging</li>
-          <li>Burglary</li>
-        </ul>
+        <div class="tab-flex-container">
+          <div class="tab-image" aria-label="Image Emergency Disaster Response placeholder">
+            <div class="placeholder-img-small">Image Placeholder</div>
+          </div>
+          <div class="tab-text">
+            <h3>Emergency Disaster Response</h3>
+            <p>Providing peace of mind during emergencies, available 24/7/365 to handle unforeseen events and minimize damage.</p>
+            <ul>
+              <li>Natural Disasters</li>
+              <li>Civil Unrest</li>
+              <li>Board-Ups</li>
+              <li>Sandbagging</li>
+              <li>Burglary</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
       <div class="tab-content" id="tab5" role="tabpanel" aria-labelledby="tab5-btn" hidden>
-        <h3>Professional Services</h3>
-        <p>Implementing solutions to streamline real estate, design, construction, and maintenance projects, ensuring success on time and budget.</p>
-        <ul>
-          <li>Engineering</li>
-          <li>Architectural</li>
-          <li>Site Surveys</li>
-          <li>Asset Collection</li>
-          <li>Consulting</li>
-        </ul>
+        <div class="tab-flex-container">
+          <div class="tab-image" aria-label="Image Professional Services placeholder">
+            <div class="placeholder-img-small">Image Placeholder</div>
+          </div>
+          <div class="tab-text">
+            <h3>Professional Services</h3>
+            <p>Implementing solutions to streamline real estate, design, construction, and maintenance projects, ensuring success on time and budget.</p>
+            <ul>
+              <li>Engineering</li>
+              <li>Architectural</li>
+              <li>Site Surveys</li>
+              <li>Asset Collection</li>
+              <li>Consulting</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
