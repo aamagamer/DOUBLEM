@@ -15,9 +15,14 @@
     color: #333;
     overflow-x: hidden;
   }
- header {
-  background-color: #b9bbbc;  /* fondo azul */
-  color: white;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: #ffffff;
+  color: rgb(12, 63, 203);
   padding: 15px 30px;
   display: flex;
   align-items: center;
@@ -25,7 +30,9 @@
   font-weight: 700;
   font-size: 1.8rem;
   letter-spacing: 1px;
+  box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 header .logo {
   height: 50px; /* tamaño del logo */
   width: auto;
@@ -327,12 +334,12 @@ header .logo {
 </style>
 </head>
 <body>
-<header>
+<main>
+
+    <header>
   <img src="Media/logo.png" alt="Company Logo" class="logo" />
   <span>Facilities Maintenance - DFW Area</span>
-</header>
-
-<main>
+    </header>
 
   <section id="improving-profits" aria-label="Improving Profits">
     <div>
