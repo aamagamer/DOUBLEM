@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Facilities Maintenance - DFW Area</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 <style>
   * {
     box-sizing: border-box;
@@ -21,7 +22,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 9999;
-  background-color: #ffffff;
+  background-color: #f1f7ff;
   color: rgb(12, 63, 203);
   padding: 15px 30px;
   display: flex;
@@ -331,6 +332,105 @@ header .logo {
       height: 160px;
     }
   }
+
+    /* Sección contacto */
+  #contact {
+    background: white;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
+    color: #1e3a8a;
+  }
+  #contact h2 {
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+  }
+  #contact label {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  #contact input, #contact textarea {
+    padding: 10px 12px;
+    border: 1.5px solid #1e3a8a;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+  }
+  #contact textarea {
+    min-height: 120px;
+  }
+  #contact button {
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    max-width: 200px;
+  }
+  #contact button:hover {
+    background-color: #16306b;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+  }
+  footer a:hover {
+    color: #a3bffa;
+  }
+  footer span {
+    font-size: 1.1rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    main {
+      margin: 20px 15px;
+      padding: 0 10px;
+    }
+    #contact form {
+      max-width: 100%;
+    }
+    footer {
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -536,5 +636,40 @@ header .logo {
   });
 </script>
 
+ <!-- Sección Contacto -->
+  <section id="contact" aria-label="Contact Section">
+    <h2>Contact Us</h2>
+    <form action="mailto:omarmoralez260@gmail.com" method="POST" enctype="text/plain" >
+      <label for="name">Name</label>
+      <input type="text" id="name" name="Name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="Email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div style="margin-top: 30px;">
+      <i class="bi bi-envelope"></i>
+      <span>omarmoralez260@gmail.com</span>
+      <br /><br />
+      <i class="bi bi-telephone-fill"></i>
+      <a href="https://wa.me/14699561247" target="_blank" rel="noopener noreferrer" style="color:#1e3a8a; font-weight:700; text-decoration:none;">+1 469-956-1247</a>
+    </div>
+  </section>
+
+<footer>
+  <a href="mailto:omarmoralez260@gmail.com" aria-label="Send Email">
+    <i class="bi bi-envelope-fill"></i>
+  </a>
+  <a href="https://wa.me/14699561247" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <span>&copy; 2025 DOUBLE M ELECTRIC construction & services.</span>
+</footer>
+</main>
 </body>
 </html>
