@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Facilities Maintenance - DFW Area</title>
+<link rel= "icon" href="Media/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 <style>
   * {
@@ -434,242 +435,279 @@ header .logo {
 </style>
 </head>
 <body>
-<main>
+  <main>
 
-    <header>
-  <img src="Media/logo.png" alt="Company Logo" class="logo" />
-  <span>Facilities Maintenance - DFW Area</span>
+    <!-- Header fijo -->
+    <header style="position: fixed; top: 0; left: 0; width: 100%; background: white; z-index: 1000; padding: 10px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+      <img src="Media/logo.png" alt="Company Logo" class="logo" />
+      <span>Facilities Maintenance - DFW Area</span>
     </header>
 
-  <section id="improving-profits" aria-label="Improving Profits">
-    <div>
-      <h2>Improving Profits Through<br>Exceptional Facilities Management</h2>
-      <p>At SMG, it’s all about the experience. We focus exclusively on improving maintenance processes and scale a client-specific, best-in-class facilities maintenance & management program that drives efficiency and increases your bottom line.</p>
+    <!-- Contenido con padding para no quedar debajo del header -->
+    <div style="padding-top: 70px;">
+
+      <section id="improving-profits" aria-label="Improving Profits">
+        <div>
+          <h2>Improving Profits Through<br>Exceptional Facilities Management</h2>
+          <p>At SMG, it’s all about the experience. We focus exclusively on improving maintenance processes and scale a client-specific, best-in-class facilities maintenance & management program that drives efficiency and increases your bottom line.</p>
+        </div>
+        <video controls aria-label="Facilities Management promotional video">
+          <source src="your-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
+      <section id="partner-with-us" aria-label="Partner With Us">
+        <h3>Partner With Us</h3>
+        <button type="button" aria-label="Learn More About Our Offerings">Learn More About Our Offerings</button>
+      </section>
+
+      <section id="work-container" aria-label="Work Sections Container">
+        <section class="work-section" aria-label="Exterior Maintenance">
+          <h3 tabindex="0">Exterior Maintenance</h3>
+          <p tabindex="0">From power washing to landscaping, we can help you maintain a beautiful exterior.</p>
+          <ul class="dropdown-list" aria-label="Exterior maintenance services list">
+            <li>Gates</li>
+            <li>Glass</li>
+            <li>Land/Snow Management</li>
+            <li>Masonry</li>
+            <li>Power Washing</li>
+            <li>and More</li>
+          </ul>
+        </section>
+
+        <section class="work-section" aria-label="Interior Maintenance">
+          <h3 tabindex="0">Interior Maintenance</h3>
+          <p tabindex="0">Plumbing, electrical, lighting, and more - keep the inside of your buildings looking and functioning their best.</p>
+          <ul class="dropdown-list" aria-label="Interior maintenance services list">
+            <li>Carpentry</li>
+            <li>Drywall & Painting</li>
+            <li>Electrical / Lighting</li>
+            <li>HVAC / Plumbing</li>
+            <li>and More</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Carrusel justo debajo de las secciones de mantenimiento -->
+      <section id="inicio" class="relative" aria-label="Main Banner Carousel" style="margin-top: 40px;">
+        <div class="carousel w-full max-h-screen">
+          <!-- Banner 1 -->
+          <div id="slide1" class="carousel-item relative w-full">
+            <img src="Media/doublem/banner1.jpg" alt="Electrical Installations" class="w-full object-cover" />
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide3" class="btn btn-circle" aria-label="Previous Slide">❮</a>
+              <a href="#slide2" class="btn btn-circle" aria-label="Next Slide">❯</a>
+            </div>
+          </div>
+          <!-- Banner 2 -->
+          <div id="slide2" class="carousel-item relative w-full">
+            <img src="Media/BannerIE.webp" alt="Industrial Maintenance" class="w-full object-cover" />
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide1" class="btn btn-circle" aria-label="Previous Slide">❮</a>
+              <a href="#slide3" class="btn btn-circle" aria-label="Next Slide">❯</a>
+            </div>
+          </div>
+          <!-- Banner 3 -->
+          <div id="slide3" class="carousel-item relative w-full">
+            <img src="Media/doublem/banner3.jpg" alt="Electrical Solutions" class="w-full object-cover" />
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide2" class="btn btn-circle" aria-label="Previous Slide">❮</a>
+              <a href="#slide1" class="btn btn-circle" aria-label="Next Slide">❯</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="carousel" aria-label="Additional Services">
+        <div class="carousel-inner">
+          <h2 class="section-title">Additional Services</h2>
+          <div class="tabs" role="tablist" aria-label="Additional Services Tabs">
+            <button class="tab active" role="tab" aria-selected="true" aria-controls="tab1" id="tab1-btn">
+              Demand & Reactive Services
+            </button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="tab2" id="tab2-btn">
+              Preventative Maintenance
+            </button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="tab3" id="tab3-btn">
+              Project & Program Rollout
+            </button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="tab4" id="tab4-btn">
+              Emergency Disaster Response
+            </button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="tab5" id="tab5-btn">
+              Professional Services
+            </button>
+          </div>
+
+          <div class="tab-content" id="tab1" role="tabpanel" aria-labelledby="tab1-btn">
+            <div class="tab-flex-container">
+              <div class="tab-image" aria-label="Image Demand & Reactive Services placeholder">
+                <div class="placeholder-img-small">Image Placeholder</div>
+              </div>
+              <div class="tab-text">
+                <h3>Demand & Reactive Facilities Maintenance Services</h3>
+                <p>These facilities maintenance services cover all labor trades we offer on a demand service response (2-hour emergency, 4-hour emergency, same day, and standard 24-48 hour onsite response).</p>
+                <ul>
+                  <li>Plumbing</li>
+                  <li>Backflow</li>
+                  <li>Electrical</li>
+                  <li>HVAC</li>
+                  <li>Signage</li>
+                  <li>Carpentry</li>
+                  <li>Gates</li>
+                  <li>Glass</li>
+                  <li>Locks</li>
+                  <li>Pest Control</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab2" role="tabpanel" aria-labelledby="tab2-btn" hidden>
+            <div class="tab-flex-container">
+              <div class="tab-image" aria-label="Image Preventative Maintenance placeholder">
+                <div class="placeholder-img-small">
+                    <img src="Media/Boiler.jpeg" alt="Preventative Maintenance" />
+                </div>
+              </div>
+              <div class="tab-text">
+                <h3>Preventative Maintenance</h3>
+                <p>Preventive maintenance involves the systematic inspection of equipment and assets where potential problems have been identified and proactively corrected to prevent equipment failure before it happens while extending the useful life of critical assets.</p>
+                <ul>
+                  <li>Keep assets performing well year-round</li>
+                  <li>Track and manage critical asset data</li>
+                  <li>Better manage repair and maintenance budgets</li>
+                  <li>Frequency/scope analysis and definition</li>
+                  <li>Reduce overall reactive HVAC spend</li>
+                  <li>Customized by asset requirements</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab3" role="tabpanel" aria-labelledby="tab3-btn" hidden>
+            <div class="tab-flex-container">
+              <div class="tab-image" aria-label="Image Project & Program Rollout placeholder">
+                <div class="placeholder-img-small">Image Placeholder</div>
+              </div>
+              <div class="tab-text">
+                <h3>Project & Program Rollout</h3>
+                <p>We help clients achieve project goals and strategic objectives within specific timeframe and budget, improving efficiencies with technology and best practices.</p>
+                <ul>
+                  <li>High Traffic Painting</li>
+                  <li>Restroom Refreshes</li>
+                  <li>Fixture Upgrades</li>
+                  <li>Demolition</li>
+                  <li>Rebranding</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab4" role="tabpanel" aria-labelledby="tab4-btn" hidden>
+            <div class="tab-flex-container">
+              <div class="tab-image" aria-label="Image Emergency Disaster Response placeholder">
+                <div class="placeholder-img-small">Image Placeholder</div>
+              </div>
+              <div class="tab-text">
+                <h3>Emergency Disaster Response</h3>
+                <p>Providing peace of mind during emergencies, available 24/7/365 to handle unforeseen events and minimize damage.</p>
+                <ul>
+                  <li>Natural Disasters</li>
+                  <li>Civil Unrest</li>
+                  <li>Board-Ups</li>
+                  <li>Sandbagging</li>
+                  <li>Burglary</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab5" role="tabpanel" aria-labelledby="tab5-btn" hidden>
+            <div class="tab-flex-container">
+              <div class="tab-image" aria-label="Image Professional Services placeholder">
+                <div class="placeholder-img-small">Image Placeholder</div>
+              </div>
+              <div class="tab-text">
+                <h3>Professional Services</h3>
+                <p>Implementing solutions to streamline real estate, design, construction, and maintenance projects, ensuring success on time and budget.</p>
+                <ul>
+                  <li>Engineering</li>
+                  <li>Architectural</li>
+                  <li>Site Surveys</li>
+                  <li>Asset Collection</li>
+                  <li>Consulting</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <script>
+        const tabs = document.querySelectorAll('#carousel .tab');
+        const tabContents = document.querySelectorAll('#carousel .tab-content');
+
+        function activateTab(index) {
+          tabs.forEach((tab, i) => {
+            if(i === index) {
+              tab.classList.add('active');
+              tab.setAttribute('aria-selected', 'true');
+              tabContents[i].hidden = false;
+            } else {
+              tab.classList.remove('active');
+              tab.setAttribute('aria-selected', 'false');
+              tabContents[i].hidden = true;
+            }
+          });
+        }
+        activateTab(0);
+        tabs.forEach((tab, idx) => {
+          tab.addEventListener('mouseenter', () => {
+            activateTab(idx);
+          });
+        });
+      </script>
+
+      <!-- Sección Contacto -->
+      <section id="contact" aria-label="Contact Section">
+        <h2>Contact Us</h2>
+        <form action="mailto:omarmoralez260@gmail.com" method="POST" enctype="text/plain">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="Name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+        <div style="margin-top: 30px;">
+          <i class="bi bi-envelope"></i>
+          <span>omarmoralez260@gmail.com</span>
+          <br /><br />
+          <i class="bi bi-telephone-fill"></i>
+          <a href="https://wa.me/14699561247" target="_blank" rel="noopener noreferrer" style="color:#1e3a8a; font-weight:700; text-decoration:none;">+1 469-956-1247</a>
+        </div>
+      </section>
+
+      <footer>
+        <a href="mailto:omarmoralez260@gmail.com" aria-label="Send Email">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+        <a href="https://wa.me/14699561247" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <span>&copy; 2025 DOUBLE M ELECTRIC construction & services.</span>
+      </footer>
+
     </div>
-    <video controls aria-label="Facilities Management promotional video">
-      <source src="your-video.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </section>
-
-  <section id="partner-with-us" aria-label="Partner With Us">
-    <h3>Partner With Us</h3>
-    <button type="button" aria-label="Learn More About Our Offerings">Learn More About Our Offerings</button>
-  </section>
-
-  <section id="work-container" aria-label="Work Sections Container">
-    <section class="work-section" aria-label="Exterior Maintenance">
-      <h3 tabindex="0">Exterior Maintenance</h3>
-      <p tabindex="0">From power washing to landscaping, we can help you maintain a beautiful exterior.</p>
-      <ul class="dropdown-list" aria-label="Exterior maintenance services list">
-        <li>Gates</li>
-        <li>Glass</li>
-        <li>Land/Snow Management</li>
-        <li>Masonry</li>
-        <li>Power Washing</li>
-        <li>and More</li>
-      </ul>
-    </section>
-
-    <section class="work-section" aria-label="Interior Maintenance">
-      <h3 tabindex="0">Interior Maintenance</h3>
-      <p tabindex="0">Plumbing, electrical, lighting, and more - keep the inside of your buildings looking and functioning their best.</p>
-      <ul class="dropdown-list" aria-label="Interior maintenance services list">
-        <li>Carpentry</li>
-        <li>Drywall & Painting</li>
-        <li>Electrical / Lighting</li>
-        <li>HVAC / Plumbing</li>
-        <li>and More</li>
-      </ul>
-    </section>
-  </section>
-
-  <section id="carousel" aria-label="Additional Services">
-    <div class="carousel-inner">
-      <h2 class="section-title">Additional Services</h2>
-      <div class="tabs" role="tablist" aria-label="Additional Services Tabs">
-        <button class="tab active" role="tab" aria-selected="true" aria-controls="tab1" id="tab1-btn">
-          Demand & Reactive Services
-        </button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="tab2" id="tab2-btn">
-          Preventative Maintenance
-        </button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="tab3" id="tab3-btn">
-          Project & Program Rollout
-        </button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="tab4" id="tab4-btn">
-          Emergency Disaster Response
-        </button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="tab5" id="tab5-btn">
-          Professional Services
-        </button>
-      </div>
-
-      <div class="tab-content" id="tab1" role="tabpanel" aria-labelledby="tab1-btn">
-        <div class="tab-flex-container">
-          <div class="tab-image" aria-label="Image Demand & Reactive Services placeholder">
-            <div class="placeholder-img-small">Image Placeholder</div>
-          </div>
-          <div class="tab-text">
-            <h3>Demand & Reactive Facilities Maintenance Services</h3>
-            <p>These facilities maintenance services cover all labor trades we offer on a demand service response (2-hour emergency, 4-hour emergency, same day, and standard 24-48 hour onsite response).</p>
-            <ul>
-              <li>Plumbing</li>
-              <li>Backflow</li>
-              <li>Electrical</li>
-              <li>HVAC</li>
-              <li>Signage</li>
-              <li>Carpentry</li>
-              <li>Gates</li>
-              <li>Glass</li>
-              <li>Locks</li>
-              <li>Pest Control</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-content" id="tab2" role="tabpanel" aria-labelledby="tab2-btn" hidden>
-        <div class="tab-flex-container">
-          <div class="tab-image" aria-label="Image Preventative Maintenance placeholder">
-            <div class="placeholder-img-small">Image Placeholder</div>
-          </div>
-          <div class="tab-text">
-            <h3>Preventative Maintenance</h3>
-            <p>Preventive maintenance involves the systematic inspection of equipment and assets where potential problems have been identified and proactively corrected to prevent equipment failure before it happens while extending the useful life of critical assets.</p>
-            <ul>
-              <li>Keep assets performing well year-round</li>
-              <li>Track and manage critical asset data</li>
-              <li>Better manage repair and maintenance budgets</li>
-              <li>Frequency/scope analysis and definition</li>
-              <li>Reduce overall reactive HVAC spend</li>
-              <li>Customized by asset requirements</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-content" id="tab3" role="tabpanel" aria-labelledby="tab3-btn" hidden>
-        <div class="tab-flex-container">
-          <div class="tab-image" aria-label="Image Project & Program Rollout placeholder">
-            <div class="placeholder-img-small">Image Placeholder</div>
-          </div>
-          <div class="tab-text">
-            <h3>Project & Program Rollout</h3>
-            <p>We help clients achieve project goals and strategic objectives within specific timeframe and budget, improving efficiencies with technology and best practices.</p>
-            <ul>
-              <li>High Traffic Painting</li>
-              <li>Restroom Refreshes</li>
-              <li>Fixture Upgrades</li>
-              <li>Demolition</li>
-              <li>Rebranding</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-content" id="tab4" role="tabpanel" aria-labelledby="tab4-btn" hidden>
-        <div class="tab-flex-container">
-          <div class="tab-image" aria-label="Image Emergency Disaster Response placeholder">
-            <div class="placeholder-img-small">Image Placeholder</div>
-          </div>
-          <div class="tab-text">
-            <h3>Emergency Disaster Response</h3>
-            <p>Providing peace of mind during emergencies, available 24/7/365 to handle unforeseen events and minimize damage.</p>
-            <ul>
-              <li>Natural Disasters</li>
-              <li>Civil Unrest</li>
-              <li>Board-Ups</li>
-              <li>Sandbagging</li>
-              <li>Burglary</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-content" id="tab5" role="tabpanel" aria-labelledby="tab5-btn" hidden>
-        <div class="tab-flex-container">
-          <div class="tab-image" aria-label="Image Professional Services placeholder">
-            <div class="placeholder-img-small">Image Placeholder</div>
-          </div>
-          <div class="tab-text">
-            <h3>Professional Services</h3>
-            <p>Implementing solutions to streamline real estate, design, construction, and maintenance projects, ensuring success on time and budget.</p>
-            <ul>
-              <li>Engineering</li>
-              <li>Architectural</li>
-              <li>Site Surveys</li>
-              <li>Asset Collection</li>
-              <li>Consulting</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-<script>
-  const tabs = document.querySelectorAll('#carousel .tab');
-  const tabContents = document.querySelectorAll('#carousel .tab-content');
-
-  function activateTab(index) {
-    tabs.forEach((tab, i) => {
-      if(i === index) {
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-        tabContents[i].hidden = false;
-      } else {
-        tab.classList.remove('active');
-        tab.setAttribute('aria-selected', 'false');
-        tabContents[i].hidden = true;
-      }
-    });
-  }
-  activateTab(0);
-  tabs.forEach((tab, idx) => {
-    tab.addEventListener('mouseenter', () => {
-      activateTab(idx);
-    });
-  });
-</script>
-
- <!-- Sección Contacto -->
-  <section id="contact" aria-label="Contact Section">
-    <h2>Contact Us</h2>
-    <form action="mailto:omarmoralez260@gmail.com" method="POST" enctype="text/plain" >
-      <label for="name">Name</label>
-      <input type="text" id="name" name="Name" required />
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="Email" required />
-
-      <label for="message">Message</label>
-      <textarea id="message" name="Message" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
-
-    <div style="margin-top: 30px;">
-      <i class="bi bi-envelope"></i>
-      <span>omarmoralez260@gmail.com</span>
-      <br /><br />
-      <i class="bi bi-telephone-fill"></i>
-      <a href="https://wa.me/14699561247" target="_blank" rel="noopener noreferrer" style="color:#1e3a8a; font-weight:700; text-decoration:none;">+1 469-956-1247</a>
-    </div>
-  </section>
-
-<footer>
-  <a href="mailto:omarmoralez260@gmail.com" aria-label="Send Email">
-    <i class="bi bi-envelope-fill"></i>
-  </a>
-  <a href="https://wa.me/14699561247" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-  </a>
-  <span>&copy; 2025 DOUBLE M ELECTRIC construction & services.</span>
-</footer>
-</main>
+  </main>
 </body>
+
 </html>
