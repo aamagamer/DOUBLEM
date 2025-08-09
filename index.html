@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Your Company – Facilities Management in DFW</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fafafa;
+    color: #333;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 15px;
+  }
+  header {
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 3px solid #e67e22;
+    margin-bottom: 40px;
+  }
+  header h1 {
+    color: #e67e22;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  nav {
+    margin-top: 10px;
+  }
+  nav a {
+    color: #555;
+    margin-right: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #e67e22;
+  }
+
+  /* Hero */
+  #hero {
+    text-align: center;
+    padding: 100px 15px 80px;
+    background: url('https://via.placeholder.com/1600x800?text=Hero+Image') center/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgb(230 126 34 / 0.4);
+    color: #e67e22;
+    text-shadow: 1px 1px 3px #fff;
+  }
+  #hero h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  #hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #444;
+    text-shadow: none;
+  }
+  .btn-primary {
+    background-color: #e67e22;
+    border: none;
+    color: white;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .btn-primary:hover {
+    background-color: #cf6a16;
+  }
+
+  /* Offerings */
+  #offerings {
+    margin-bottom: 50px;
+  }
+  #offerings h2.section-title {
+    color: #e67e22;
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .services-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .service-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 320px;
+    height: 400px;
+    position: relative;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  /* Hover expand */
+  .hover-expand .overlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(230, 126, 34, 0.9);
+    color: #fff;
+    padding: 20px 25px;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.4s ease, top 0.4s ease;
+  }
+  .hover-expand:hover img {
+    transform: scale(1.1);
+  }
+  .hover-expand:hover .overlay {
+    opacity: 1;
+    top: 0;
+  }
+  .overlay h3 {
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgb(0 0 0 / 0.4);
+  }
+  .overlay p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .overlay ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 0.95rem;
+    max-height: 170px;
+  }
+
+  /* Tabs for services */
+  #carousel {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+  #carousel h2.section-title {
+    color: #e67e22;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .tab {
+    padding: 12px 20px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s ease;
+    user-select: none;
+    border-radius: 8px 8px 0 0;
+    background: #f9f9f9;
+  }
+  .tab.active {
+    border-color: #e67e22;
+    color: #e67e22;
+    background: #fff;
+    box-shadow: 0 3px 8px rgb(230 126 34 / 0.3);
+  }
+  .tab:hover:not(.active) {
+    color: #e67e22;
+  }
+
+  .tab-content {
+    background: #fff;
+    border-radius: 0 12px 12px 12px;
+    padding: 20px 25px;
+    color: #444;
+    min-height: 260px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  }
+  .tab-content h3 {
+    margin-bottom: 15px;
+    color: #e67e22;
+  }
+  .tab-content p {
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .tab-content ul {
+    list-style: disc inside;
+    padding-left: 0;
+    font-size: 1rem;
+    max-height: 160px;
+    overflow-y: auto;
+  }
+  .tab-content ul li {
+    margin-bottom: 5px;
+  }
+
+  /* Contact */
+  #contact {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+  #contact h2.section-title {
+    color: #e67e22;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+  }
+  #contact p.contact-info {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #555;
+  }
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  form input:focus,
+  form textarea:focus {
+    border-color: #e67e22;
+    outline: none;
+  }
+  form textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  .btn-primary {
+    background-color: #e67e22;
+    border: none;
+    color: white;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .btn-primary:hover {
+    background-color: #cf6a16;
+  }
+  footer {
+    text-align: center;
+    padding: 20px 15px;
+    background: #fff;
+    border-top: 3px solid #e67e22;
+    color: #666;
+    font-weight: 600;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .services-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+    nav {
+      text-align: center;
+    }
+    nav a {
+      margin: 0 12px 15px;
+      display: inline-block;
+    }
+    .tabs {
+      justify-content: center;
+      gap: 10px;
+    }
+    .tab {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Your Company DFW</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#offerings">Offerings</a>
+      <a href="#carousel">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="container">
+    <h2>Improving Profits Through<br />Exceptional Facilities Management</h2>
+    <p>
+      At Your Company, it’s all about the experience. We focus exclusively on improving maintenance processes and scale a client-specific, best-in-class facilities maintenance & management program that drives efficiency and increases your bottom line.
+    </p>
+    <button class="btn-primary">Partner With Us</button>
+  </div>
+</section>
+
+<section id="offerings" class="container">
+  <h2 class="section-title">Offerings</h2>
+  <div class="services-grid">
+    <div class="service-card hover-expand">
+      <img src="https://via.placeholder.com/600x400?text=Exterior+Maintenance" alt="Exterior Maintenance" />
+      <div class="overlay">
+        <h3>Exterior Maintenance</h3>
+        <p>From power washing to landscaping, we can help you maintain a beautiful exterior.</p>
+        <ul>
+          <li>Gates</li>
+          <li>Glass</li>
+          <li>Land/Snow Management</li>
+          <li>Masonry</li>
+          <li>Power Washing</li>
+          <li>and More</li>
+        </ul>
+      </div>
+    </div>
+    <div class="service-card hover-expand">
+      <img src="https://via.placeholder.com/600x400?text=Interior+Maintenance" alt="Interior Maintenance" />
+      <div class="overlay">
+        <h3>Interior Maintenance</h3>
+        <p>Plumbing, electrical, lighting, and more - keep the inside of your buildings looking and functioning their best.</p>
+        <ul>
+          <li>Carpentry</li>
+          <li>Drywall & Painting</li>
+          <li>Electrical / Lighting</li>
+          <li>HVAC / Plumbing</li>
+          <li>and More</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="carousel" class="container">
+  <h2 class="section-title">Additional Services</h2>
+  <div class="tabs" role="tablist" aria-label="Additional Services Tabs">
+    <button class="tab active" role="tab" aria-selected="true" aria-controls="tab1" id="tab1-btn">Demand & Reactive Services</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="tab2" id="tab2-btn">Preventative Maintenance</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="tab3" id="tab3-btn">Project & Program Rollout</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="tab4" id="tab4-btn">Emergency Disaster Response</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="tab5" id="tab5-btn">Professional Services</button>
+  </div>
+  <div class="tab-content" id="tab1" role="tabpanel" aria-labelledby="tab1-btn">
+    <h3>Demand & Reactive Facilities Maintenance Services</h3>
+    <p>
+      These facilities maintenance services cover all labor trades we offer on a demand service response (2-hour emergency, 4-hour emergency, same day, and standard 24-48 hour onsite response).
+    </p>
+    <ul>
+      <li>Plumbing</li>
+      <li>Backflow</li>
+      <li>Electrical</li>
+      <li>HVAC</li>
+      <li>Signage</li>
+      <li>Carpentry</li>
+      <li>Gates</li>
+      <li>Glass</li>
+      <li>Locks</li>
+      <li>Pest Control</li>
+    </ul>
+  </div>
+  <div class="tab-content" id="tab2" role="tabpanel" aria-labelledby="tab2-btn" hidden>
+    <h3>Preventative Maintenance</h3>
+    <p>
+      Preventive maintenance involves the systematic inspection of equipment and assets where potential problems have been identified and proactively corrected to prevent equipment failure before it happens while extending the useful life of critical assets.
+    </p>
+    <ul>
+      <li>Keep assets performing well year-round</li>
+      <li>Track and manage critical asset data</li>
+      <li>Better manage repair and maintenance budgets</li>
+      <li>Frequency/scope analysis and definition</li>
+      <li>Reduce overall reactive HVAC spend</li>
+      <li>Customized by asset requirements</li>
+    </ul>
+  </div>
+  <div class="tab-content" id="tab3" role="tabpanel" aria-labelledby="tab3-btn" hidden>
+    <h3>Project & Program Rollout</h3>
+    <p>
+      We help clients achieve project goals and strategic objectives within specific timeframe and budget, improving efficiencies with technology and best practices.
+    </p>
+    <ul>
+      <li>High Traffic Painting</li>
+      <li>Restroom Refreshes</li>
+      <li>Fixture Upgrades</li>
+      <li>Demolition</li>
+      <li>Rebranding</li>
+    </ul>
+  </div>
+  <div class="tab-content" id="tab4" role="tabpanel" aria-labelledby="tab4-btn" hidden>
+    <h3>Emergency Disaster Response</h3>
+    <p>
+      Providing peace of mind during emergencies, available 24/7/365 to handle unforeseen events and minimize damage.
+    </p>
+    <ul>
+      <li>Natural Disasters</li>
+      <li>Civil Unrest</li>
+      <li>Board-Ups</li>
+      <li>Sandbagging</li>
+      <li>Burglary</li>
+    </ul>
+  </div>
+  <div class="tab-content" id="tab5" role="tabpanel" aria-labelledby="tab5-btn" hidden>
+    <h3>Professional Services</h3>
+    <p>
+      Implementing solutions to streamline real estate, design, construction, and maintenance projects, ensuring success on time and budget.
+    </p>
+    <ul>
+      <li>Engineering</li>
+      <li>Architectural</li>
+      <li>Site Surveys</li>
+      <li>Asset Collection</li>
+      <li>Consulting</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <h2 class="section-title">Let's Work Together</h2>
+  <p class="contact-info">
+    Contact our professional team today by filling out the form or calling us at +1 (XXX) XXX-XXXX, and we’ll respond within 48 hours.
+  </p>
+  <form>
+    <input type="text" placeholder="First Name" required />
+    <input type="text" placeholder="Last Name" required />
+    <input type="email" placeholder="Email" required />
+    <input type="text" placeholder="Subject" />
+    <textarea placeholder="Message" required></textarea>
+    <button class="btn-primary" type="submit">Get in Touch</button>
+  </form>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Your Company DFW – All rights reserved</p>
+  </div>
+</footer>
+
+<script>
+  // Tabs functionality
+  const tabs = document.querySelectorAll('.tab');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      // Remove active classes and hide contents
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tabContents.forEach(c => c.hidden = true);
+
+      // Activate clicked tab and show content
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const target = tab.getAttribute('aria-controls');
+      document.getElementById(target).hidden = false;
+    });
+  });
+
+  // Optional: switch tabs on hover (commented out)
+  /*
+  tabs.forEach((tab) => {
+    tab.addEventListener('mouseenter', () => {
+      tab.click();
+    });
+  });
+  */
+</script>
+
+</body>
+</html>
