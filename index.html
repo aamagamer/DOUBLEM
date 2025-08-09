@@ -5,27 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Facilities Maintenance - DFW Area</title>
 <style>
-  /* Reset básico */
   * {
     box-sizing: border-box;
   }
   body, html {
     margin: 0; padding: 0;
     font-family: Arial, sans-serif;
-    background: #ffffff;
+    background: #f9fbff;
     color: #333;
     overflow-x: hidden;
   }
+ header {
+  background-color: #b9bbbc;  /* fondo azul */
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+header .logo {
+  height: 50px; /* tamaño del logo */
+  width: auto;
+  object-fit: contain;
+}
 
-  header {
-    background: #1e3a8a;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-  }
 
   main {
     max-width: 1100px;
@@ -33,28 +39,35 @@
     padding: 0 20px;
   }
 
-  /* Sección: Improving Profits */
+  /* Sección Improving Profits con video */
   #improving-profits {
     background: white;
     padding: 40px 30px;
     margin-bottom: 40px;
     border-radius: 12px;
-    text-align: center;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
+    display: flex;
+    gap: 40px;
+    align-items: center;
     color: #1e3a8a;
   }
   #improving-profits h2 {
     font-weight: 700;
     font-size: 2.2rem;
     margin-bottom: 15px;
+    max-width: 500px;
   }
   #improving-profits p {
     font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 500px;
     line-height: 1.5;
   }
+  #improving-profits video {
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  }
 
-  /* Sección: Partner With Us */
   #partner-with-us {
     text-align: center;
     margin-bottom: 50px;
@@ -80,24 +93,81 @@
     background-color: #16306b;
   }
 
-  /* Secciones Exterior e Interior */
+  /* Contenedor flex para Exterior e Interior juntos */
+  #work-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+  }
+
   .work-section {
     background: white;
-    margin-bottom: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
     padding: 25px 30px;
+    position: relative;
+    flex: 1;
+    box-sizing: border-box;
   }
   .work-section h3 {
     color: #1e3a8a;
     margin-bottom: 12px;
     font-weight: 700;
+    cursor: pointer;
+    user-select: none;
   }
   .work-section p {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 18px;
+    cursor: pointer;
+    user-select: none;
   }
+
+  /* Lista desplegable */
+  .dropdown-list {
+    display: none;
+    list-style: disc inside;
+    color: #1e3a8a;
+    font-weight: 600;
+    margin-top: -10px;
+    padding-left: 20px;
+  }
+  .work-section:hover .dropdown-list {
+    display: block;
+  }
+
+  /* Estilo renglones para las listas desplegables de Exterior e Interior */
+.work-section .dropdown-list {
+  list-style: none; /* sin los bullets */
+  padding-left: 0;
+  margin: 0;
+  color: #1e3a8a;
+  font-weight: 600;
+  max-height: 160px;
+  overflow-y: auto;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  background: #fff;
+  border-radius: 0 0 12px 12px;
+}
+
+.work-section .dropdown-list li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  cursor: default;
+}
+
+/* Sin borde en el último renglón */
+.work-section .dropdown-list li:last-child {
+  border-bottom: none;
+}
+
+
+  /* Placeholder imagen */
   .placeholder-img {
     width: 100%;
     max-width: 600px;
@@ -113,7 +183,7 @@
     border-radius: 12px;
   }
 
-  /* Sección Additional Services con menú tabs */
+  /* Additional Services */
   #carousel {
     width: 100%;
     background: #fff;
@@ -225,6 +295,23 @@
       margin: 20px 15px;
       padding: 0 10px;
     }
+    #improving-profits {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+    #improving-profits h2, #improving-profits p {
+      max-width: 100%;
+    }
+    #improving-profits video {
+      max-width: 100%;
+    }
+    #work-container {
+      flex-direction: column;
+    }
+    .work-section {
+      width: 100%;
+    }
     .tab-flex-container {
       flex-direction: column;
     }
@@ -240,14 +327,22 @@
 </style>
 </head>
 <body>
-
-<header>Facilities Maintenance - DFW Area</header>
+<header>
+  <img src="Media/logo.png" alt="Company Logo" class="logo" />
+  <span>Facilities Maintenance - DFW Area</span>
+</header>
 
 <main>
 
   <section id="improving-profits" aria-label="Improving Profits">
-    <h2>Improving Profits Through<br>Exceptional Facilities Management</h2>
-    <p>At SMG, it’s all about the experience. We focus exclusively on improving maintenance processes and scale a client-specific, best-in-class facilities maintenance & management program that drives efficiency and increases your bottom line.</p>
+    <div>
+      <h2>Improving Profits Through<br>Exceptional Facilities Management</h2>
+      <p>At SMG, it’s all about the experience. We focus exclusively on improving maintenance processes and scale a client-specific, best-in-class facilities maintenance & management program that drives efficiency and increases your bottom line.</p>
+    </div>
+    <video controls aria-label="Facilities Management promotional video">
+      <source src="your-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </section>
 
   <section id="partner-with-us" aria-label="Partner With Us">
@@ -255,20 +350,31 @@
     <button type="button" aria-label="Learn More About Our Offerings">Learn More About Our Offerings</button>
   </section>
 
-  <section class="work-section" aria-label="Exterior Maintenance">
-    <h3>Exterior Maintenance</h3>
-    <p>From power washing to landscaping, we can help you maintain a beautiful exterior.</p>
-    <div class="placeholder-img" role="img" aria-label="Placeholder for Exterior Maintenance Image">
-      Exterior Maintenance Image Placeholder
-    </div>
-  </section>
+  <section id="work-container" aria-label="Work Sections Container">
+    <section class="work-section" aria-label="Exterior Maintenance">
+      <h3 tabindex="0">Exterior Maintenance</h3>
+      <p tabindex="0">From power washing to landscaping, we can help you maintain a beautiful exterior.</p>
+      <ul class="dropdown-list" aria-label="Exterior maintenance services list">
+        <li>Gates</li>
+        <li>Glass</li>
+        <li>Land/Snow Management</li>
+        <li>Masonry</li>
+        <li>Power Washing</li>
+        <li>and More</li>
+      </ul>
+    </section>
 
-  <section class="work-section" aria-label="Interior Maintenance">
-    <h3>Interior Maintenance</h3>
-    <p>Plumbing, electrical, lighting, and more - keep the inside of your buildings looking and functioning their best.</p>
-    <div class="placeholder-img" role="img" aria-label="Placeholder for Interior Maintenance Image">
-      Interior Maintenance Image Placeholder
-    </div>
+    <section class="work-section" aria-label="Interior Maintenance">
+      <h3 tabindex="0">Interior Maintenance</h3>
+      <p tabindex="0">Plumbing, electrical, lighting, and more - keep the inside of your buildings looking and functioning their best.</p>
+      <ul class="dropdown-list" aria-label="Interior maintenance services list">
+        <li>Carpentry</li>
+        <li>Drywall & Painting</li>
+        <li>Electrical / Lighting</li>
+        <li>HVAC / Plumbing</li>
+        <li>and More</li>
+      </ul>
+    </section>
   </section>
 
   <section id="carousel" aria-label="Additional Services">
@@ -415,11 +521,7 @@
       }
     });
   }
-
-  // Activate first tab initially
   activateTab(0);
-
-  // Change tab on mouse enter (hover)
   tabs.forEach((tab, idx) => {
     tab.addEventListener('mouseenter', () => {
       activateTab(idx);
