@@ -155,8 +155,8 @@ header .logo {
   margin: 0;
   color: #1e3a8a;
   font-weight: 600;
-  max-height: 160px;
-  overflow-y: auto;
+  max-height: none;
+  overflow-y: visible;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   border-left: none;
@@ -433,6 +433,14 @@ header .logo {
     }
   }
 
+  .tab-image img {
+  width: 100%;
+  height: 250px; /* altura estándar */
+  object-fit: cover; /* recorta para que todas se vean igual */
+  border-radius: 10px;
+}
+
+
 </style>
 </head>
 <body>
@@ -492,17 +500,38 @@ header .logo {
 
      <!-- Carrusel automático -->
   <section id="inicio" class="relative w-full overflow-hidden">
-    <div class="carousel-container relative w-full">
-      <div class="carousel-slide flex transition-transform duration-700 ease-in-out">
-        <!-- Slide 1 -->
-        <img src="Media/BannerIE.webp" alt="Slide 1" class="w-full h-screen object-cover" />
-        <!-- Slide 2 -->
-        <img src="Media/BannerF.jpg" alt="Slide 2" class="w-full h-screen object-cover" />
-        <!-- Slide 3 -->
-        <img src="Media/BannerO.jpg" alt="Slide 3" class="w-full h-screen object-cover" />
+  <div class="carousel-container relative w-full">
+    <div class="carousel-slide flex transition-transform duration-700 ease-in-out">
+      <!-- Slide 1 -->
+      <div class="relative w-full h-screen">
+        <img src="Media/BannerIE.webp" alt="Slide 1" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center p-4">
+          <h2 class="text-white text-4xl font-bold mb-4">Título del Banner 1</h2>
+          <p class="text-white text-lg max-w-2xl">Texto descriptivo aquí, breve y claro.</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="relative w-full h-screen">
+        <img src="Media/BannerF.jpg" alt="Slide 2" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center p-4">
+          <h2 class="text-white text-4xl font-bold mb-4">Título del Banner 2</h2>
+          <p class="text-white text-lg max-w-2xl">Texto descriptivo aquí, breve y claro.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="relative w-full h-screen">
+        <img src="Media/BannerO.jpg" alt="Slide 3" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center p-4">
+          <h2 class="text-white text-4xl font-bold mb-4">Título del Banner 3</h2>
+          <p class="text-white text-lg max-w-2xl">Texto descriptivo aquí, breve y claro.</p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <script>
     const slideContainer = document.querySelector('.carousel-slide');
