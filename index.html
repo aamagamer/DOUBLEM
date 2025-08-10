@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Facilities Maintenance - DFW Area</title>
+<script src="https://cdn.tailwindcss.com"></script>
 <link rel= "icon" href="Media/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 <style>
@@ -489,35 +490,35 @@ header .logo {
         </section>
       </section>
 
-      <!-- Carrusel justo debajo de las secciones de mantenimiento -->
-      <section id="inicio" class="relative" aria-label="Main Banner Carousel" style="margin-top: 40px;">
-        <div class="carousel w-full max-h-screen">
-          <!-- Banner 1 -->
-          <div id="slide1" class="carousel-item relative w-full">
-            <img src="Media/doublem/banner1.jpg" alt="Electrical Installations" class="w-full object-cover" />
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide3" class="btn btn-circle" aria-label="Previous Slide">❮</a>
-              <a href="#slide2" class="btn btn-circle" aria-label="Next Slide">❯</a>
-            </div>
-          </div>
-          <!-- Banner 2 -->
-          <div id="slide2" class="carousel-item relative w-full">
-            <img src="Media/BannerIE.webp" alt="Industrial Maintenance" class="w-full object-cover" />
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide1" class="btn btn-circle" aria-label="Previous Slide">❮</a>
-              <a href="#slide3" class="btn btn-circle" aria-label="Next Slide">❯</a>
-            </div>
-          </div>
-          <!-- Banner 3 -->
-          <div id="slide3" class="carousel-item relative w-full">
-            <img src="Media/doublem/banner3.jpg" alt="Electrical Solutions" class="w-full object-cover" />
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide2" class="btn btn-circle" aria-label="Previous Slide">❮</a>
-              <a href="#slide1" class="btn btn-circle" aria-label="Next Slide">❯</a>
-            </div>
-          </div>
-        </div>
-      </section>
+     <!-- Carrusel automático -->
+  <section id="inicio" class="relative w-full overflow-hidden">
+    <div class="carousel-container relative w-full">
+      <div class="carousel-slide flex transition-transform duration-700 ease-in-out">
+        <!-- Slide 1 -->
+        <img src="Media/BannerIE.webp" alt="Slide 1" class="w-full h-screen object-cover" />
+        <!-- Slide 2 -->
+        <img src="Media/BannerF.jpg" alt="Slide 2" class="w-full h-screen object-cover" />
+        <!-- Slide 3 -->
+        <img src="Media/BannerO.jpg" alt="Slide 3" class="w-full h-screen object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const slideContainer = document.querySelector('.carousel-slide');
+    const slides = document.querySelectorAll('.carousel-slide img');
+    let counter = 0;
+
+    function nextSlide() {
+      counter++;
+      if (counter >= slides.length) {
+        counter = 0;
+      }
+      slideContainer.style.transform = `translateX(${-counter * 100}%)`;
+    }
+
+    setInterval(nextSlide, 3000); // Cambia cada 3 segundos
+  </script>
 
       <section id="carousel" aria-label="Additional Services">
         <div class="carousel-inner">
